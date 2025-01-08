@@ -1,23 +1,20 @@
 <script setup lang="ts">
 import { ref, watch, nextTick } from 'vue'
-import QRCode, { type QRCodeRenderersOptions } from 'qrcode'
+import QRCode from 'qrcode'
+import type { QRCodeProps } from './types'
 import { uuid } from '@/utils'
 
 defineOptions({
-  name: 'VueQRCode',
+  name: 'QRCode',
 })
 
-const props = defineProps<{
-  modelValue: string
-  options: QRCodeRenderersOptions
-  logo: string
-}>()
+const props = defineProps<QRCodeProps>()
 
 defineEmits(['update:modelValue'])
 
 const QRCodeRef = ref<HTMLCanvasElement | null>(null)
 
-const id = uuid('vue-qrcode')
+const id = uuid('qrcode')
 
 const renderQRCode = () => {
   if (!QRCodeRef.value) return
@@ -35,9 +32,9 @@ const renderQRCode = () => {
       if (error) return
 
       const canvas = QRCodeRef.value
-      if (canvas) {
+      if (canvas && props.logo) {
         const logo = new Image()
-        logo.src = props.logo || '/images/vue.svg'
+        logo.src = props.logo
         logo.onload = () => {
           const cw = canvas.width
           const dwh = canvas.width / 4
