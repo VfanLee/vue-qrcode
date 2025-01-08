@@ -1,33 +1,52 @@
-# vue-qrcode
+# Vue QRCode
 
-This template should help get you started developing with Vue 3 in Vite.
+## 介绍
 
-## Recommended IDE Setup
+一个基于 [qrcode](https://www.npmjs.com/package/qrcode) 的 Vue3 组件。
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 用法
 
-## Type Support for `.vue` Imports in TS
+### 通过插件注册组件
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+```js
+import { createApp } from 'vue'
+import App from './App.vue'
+import VueQRCode from 'vue-qrcode'
 
-## Customize configuration
+const app = createApp(App)
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+app.use(VueQRCode)
 
-## Project Setup
-
-```sh
-pnpm install
+app.mount('#app')
 ```
 
-### Compile and Hot-Reload for Development
+### 直接引入
 
-```sh
-pnpm dev
+```vue
+<script setup>
+import { ref } from 'vue'
+import { VueQrcode } from 'vue-qrcode'
+
+const value = ref('https://github.com/vfanlee/vue-qrcode')
+</script>
+
+<template>
+  <div>
+    <vue-qrcode v-model="value" />
+  </div>
+</template>
 ```
 
-### Type-Check, Compile and Minify for Production
+## 选项
 
-```sh
-pnpm build
-```
+### Attributes
+
+- `modelValue` / `v-model`
+
+### Events
+
+- `change`
+
+### defineExpose
+
+- `QRCodeRef`

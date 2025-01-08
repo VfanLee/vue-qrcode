@@ -1,13 +1,12 @@
 import type { App } from 'vue'
-import QRCode from './components/QRCode.vue'
+import VueQrcode from './components/VueQrcode.vue'
+
+export { VueQrcode }
 
 const install = (app: App) => {
-  app.component('QRCode', QRCode)
+  app.component('VueQrcode', VueQrcode)
 }
-
-export { install, QRCode }
 
 export default {
   install,
-  QRCode,
 }

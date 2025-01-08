@@ -1,7 +1,13 @@
 import type { QRCodeRenderersOptions } from 'qrcode'
 
-export interface QRCodeProps {
+export interface VueQrcodeProps {
   modelValue: string
+  image?: string
   options?: QRCodeRenderersOptions
-  logo?: string
+}
+
+export interface VueQrcodeEmit {
+  'update:modelValue': [value: string]
+  'change': [value: string]
+  'imageLoad': []
 }

@@ -1,17 +1,17 @@
 <script setup>
 import { ref } from 'vue'
-import { QRCode } from 'vue-qrcode'
+import { VueQrcode } from 'vue-qrcode'
 
-const value = ref('https://cn.vuejs.org')
-const options = ref({
-  width: 100,
-})
-const logo = ref('https://cn.vuejs.org/logo.svg')
+const value = ref('https://github.com/vfanlee/vue-qrcode')
+
+const handleChange = value => {
+  console.log(value)
+}
 </script>
 
 <template>
   <div>
-    <input v-model="value" />
-    <QRCode v-model="value" :options="options" :logo="logo" />
+    <input type="text" v-model="value" />
+    <vue-qrcode v-model="value" @change="handleChange" />
   </div>
 </template>

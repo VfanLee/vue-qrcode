@@ -36,7 +36,7 @@ export default defineConfig({
         },
         {
           format: 'umd',
-          name: 'VueQRCode',
+          name: 'VueQrcode',
           dir: 'dist',
           entryFileNames: 'vue-qrcode.umd.js',
           exports: 'named',

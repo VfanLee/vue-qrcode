@@ -1,37 +1,31 @@
 <script setup lang="ts">
 import { ref, watch, nextTick } from 'vue'
 import QRCode from 'qrcode'
-import type { QRCodeProps } from './types'
+import type { VueQrcodeProps, VueQrcodeEmit } from './types'
 import { uuid } from '@/utils'
 
 defineOptions({
-  name: 'QRCode',
+  name: 'VueQrcode',
 })
 
-const props = defineProps<QRCodeProps>()
-
-defineEmits(['update:modelValue'])
+const props = defineProps<VueQrcodeProps>()
+const emit = defineEmits<VueQrcodeEmit>()
 
 const QRCodeRef = ref<HTMLCanvasElement | null>(null)
 
-const id = uuid('qrcode')
+const id = uuid('vue-qrcode')
 
 const renderQRCode = () => {
-  if (!QRCodeRef.value) return
-
+  const canvas = QRCodeRef.value
+  if (!canvas) return
   QRCode.toCanvas(
-    QRCodeRef.value,
+    canvas,
     props.modelValue,
-    {
-      errorCorrectionLevel: 'H',
-      margin: 0,
-      width: 200,
-      ...props.options,
-    },
+    { ...props.options },
     error => {
-      if (error) return
+      emit('change', props.modelValue)
 
-      const canvas = QRCodeRef.value
+      if (error) return
       if (canvas && props.logo) {
         const logo = new Image()
         logo.src = props.logo
@@ -39,7 +33,6 @@ const renderQRCode = () => {
           const cw = canvas.width
           const dwh = canvas.width / 4
           const dxy = (cw - dwh) / 2
-
           const ctx = canvas.getContext('2d')
           if (ctx) {
             ctx.imageSmoothingEnabled = false
@@ -47,15 +40,20 @@ const renderQRCode = () => {
           }
         }
       }
-    },
-  )
+    })
 }
 
 watch(
   () => props.modelValue,
-  () => nextTick(renderQRCode),
+  () => {
+    nextTick(renderQRCode)
+  },
   { immediate: true },
 )
+
+defineExpose({
+  QRCodeRef,
+})
 </script>
 
 <template>
