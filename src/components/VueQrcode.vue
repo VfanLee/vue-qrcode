@@ -26,9 +26,9 @@ const renderQRCode = () => {
       emit('change', props.modelValue)
 
       if (error) return
-      if (canvas && props.logo) {
+      if (canvas && props.image) {
         const logo = new Image()
-        logo.src = props.logo
+        logo.src = props.image
         logo.onload = () => {
           const cw = canvas.width
           const dwh = canvas.width / 4
