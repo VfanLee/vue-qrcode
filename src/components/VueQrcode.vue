@@ -38,6 +38,7 @@ const renderQRCode = () => {
             ctx.imageSmoothingEnabled = false
             ctx.drawImage(logo, dxy, dxy, dwh, dwh)
           }
+          emit('imageLoad')
         }
       }
     })
