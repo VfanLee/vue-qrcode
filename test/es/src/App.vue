@@ -12,6 +12,6 @@ const handleChange = value => {
 <template>
   <div>
     <input type="text" v-model="value" />
-    <vue-qrcode v-model="value" @change="handleChange" />
+    <VueQrcode v-model="value" @change="handleChange" />
   </div>
 </template>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch, nextTick } from 'vue'
 import QRCode from 'qrcode'
-import type { VueQrcodeProps, VueQrcodeEmit } from './types'
+import type { VueQrcodeInstance, VueQrcodeProps, VueQrcodeEmit } from './types'
 import { uuid } from '@/utils'
 
 defineOptions({
@@ -11,7 +11,7 @@ defineOptions({
 const props = defineProps<VueQrcodeProps>()
 const emit = defineEmits<VueQrcodeEmit>()
 
-const QRCodeRef = ref<HTMLCanvasElement | null>(null)
+const QRCodeRef = ref<VueQrcodeInstance>(null)
 
 const id = uuid('vue-qrcode')
 
@@ -21,11 +21,14 @@ const renderQRCode = () => {
   QRCode.toCanvas(
     canvas,
     props.modelValue,
-    { ...props.options },
+    {
+      ...props.options,
+    },
     error => {
+      if (error) return
+
       emit('change', props.modelValue)
 
-      if (error) return
       if (canvas && props.image) {
         const logo = new Image()
         logo.src = props.image
@@ -41,7 +44,8 @@ const renderQRCode = () => {
           emit('imageLoad')
         }
       }
-    })
+    },
+  )
 }
 
 watch(

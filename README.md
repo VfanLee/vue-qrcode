@@ -11,11 +11,11 @@
 ```js
 import { createApp } from 'vue'
 import App from './App.vue'
-import VueQRCode from 'vue-qrcode'
+import VueQrcode from 'vue-qrcode'
 
 const app = createApp(App)
 
-app.use(VueQRCode)
+app.use(VueQrcode)
 
 app.mount('#app')
 ```
@@ -37,16 +37,23 @@ const value = ref('https://github.com/vfanlee/vue-qrcode')
 </template>
 ```
 
-## 选项
+## API
 
 ### Attributes
 
-- `modelValue` / `v-model`
+| 属性名                   | 说明       | 类型     |
+| ------------------------ | ---------- | -------- |
+| `modelValue` / `v-model` | 二维码文本 | `string` |
 
 ### Events
 
-- `change`
+| 事件名      | 详情                   | 类型                      |
+| ----------- | ---------------------- | ------------------------- |
+| `change`    | 二维码文本值改变后触发 | `(value: string) => void` |
+| `imageLoad` | image 加载后触发       | `() => void`              |
 
 ### defineExpose
 
-- `QRCodeRef`
+| 名称        | 详情           | 类型                             |
+| ----------- | -------------- | -------------------------------- |
+| `QRCodeRef` | VueQrcode 实例 | `Ref<HTMLCanvasElement \| null>` |
