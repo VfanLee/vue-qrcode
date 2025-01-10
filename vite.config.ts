@@ -5,6 +5,12 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import dts from 'vite-plugin-dts'
 
+const name = 'vue-qrcode'
+const iifeName = 'VueQrcode'
+const iifeGlobals = {
+  vue: 'Vue',
+}
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -29,20 +35,15 @@ export default defineConfig({
         {
           format: 'es',
           dir: 'dist',
-          entryFileNames: 'vue-qrcode.js',
-          globals: {
-            vue: 'Vue',
-          },
+          entryFileNames: `${name}.js`,
         },
         {
           format: 'umd',
-          name: 'VueQrcode',
+          name: iifeName,
           dir: 'dist',
-          entryFileNames: 'vue-qrcode.umd.js',
+          entryFileNames: `${name}.[format].js`,
           exports: 'named',
-          globals: {
-            vue: 'Vue',
-          },
+          globals: iifeGlobals,
         },
       ],
     },

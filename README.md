@@ -41,19 +41,25 @@ const value = ref('https://github.com/vfanlee/vue-qrcode')
 
 ### Attributes
 
-| 属性名                   | 说明       | 类型     |
-| ------------------------ | ---------- | -------- |
-| `modelValue` / `v-model` | 二维码文本 | `string` |
+| 属性名                   | 说明                                                                              | 类型     |
+| ------------------------ | --------------------------------------------------------------------------------- | -------- |
+| `modelValue` / `v-model` | 文本值                                                                            | `string` |
+| `image`                  | 插入图片                                                                          | `string` |
+| `options`                | 配置选项，可参考 [qrcode](https://github.com/soldair/node-qrcode#qr-code-options) | `object` |
 
 ### Events
 
-| 事件名      | 详情                   | 类型                      |
-| ----------- | ---------------------- | ------------------------- |
-| `change`    | 二维码文本值改变后触发 | `(value: string) => void` |
-| `imageLoad` | image 加载后触发       | `() => void`              |
+| 事件名             | 详情                   | 类型                      |
+| ------------------ | ---------------------- | ------------------------- |
+| `change`           | 文本值改变后触发       | `(value: string) => void` |
+| `imageLoad`        | image 加载后触发       | `() => void`              |
+| `rendered`         | 渲染后触发             | `() => void`              |
+| `renderError`      | 渲染失败后触发         | `() => void`              |
+| `renderImage`      | 插入图片渲染后触发     | `() => void`              |
+| `renderImageError` | 插入图片渲染失败后触发 | `() => void`              |
 
 ### defineExpose
 
-| 名称        | 详情           | 类型                             |
-| ----------- | -------------- | -------------------------------- |
-| `QRCodeRef` | VueQrcode 实例 | `Ref<HTMLCanvasElement \| null>` |
+| 名称           | 详情           | 类型                             |
+| -------------- | -------------- | -------------------------------- |
+| `VueQrcodeRef` | VueQrcode 实例 | `Ref<HTMLCanvasElement \| null>` |
