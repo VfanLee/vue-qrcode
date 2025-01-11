@@ -4,6 +4,12 @@
 
 一个基于 [qrcode](https://www.npmjs.com/package/qrcode) 的 Vue3 组件。
 
+## 安装
+
+```bash
+npm install @vfanlee/vue-qrcode
+```
+
 ## 用法
 
 ### 通过插件全局注册
