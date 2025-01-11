@@ -1,4 +1,4 @@
-# Vue QRCode
+# Vue Qrcode
 
 ## 介绍
 
@@ -6,7 +6,7 @@
 
 ## 用法
 
-### 通过插件注册组件
+### 通过插件全局注册
 
 ```js
 import { createApp } from 'vue'
@@ -20,7 +20,7 @@ app.use(VueQrcode)
 app.mount('#app')
 ```
 
-### 直接引入
+### 按需引入
 
 ```vue
 <script setup>
@@ -44,7 +44,7 @@ const value = ref('https://github.com/vfanlee/vue-qrcode')
 | 属性名                   | 说明                                                                              | 类型     |
 | ------------------------ | --------------------------------------------------------------------------------- | -------- |
 | `modelValue` / `v-model` | 文本值                                                                            | `string` |
-| `image`                  | 插入图片                                                                          | `string` |
+| `image`                  | 图片路径                                                                          | `string` |
 | `options`                | 配置选项，可参考 [qrcode](https://github.com/soldair/node-qrcode#qr-code-options) | `object` |
 
 ### Events
@@ -52,13 +52,12 @@ const value = ref('https://github.com/vfanlee/vue-qrcode')
 | 事件名             | 详情                   | 类型                      |
 | ------------------ | ---------------------- | ------------------------- |
 | `change`           | 文本值改变后触发       | `(value: string) => void` |
-| `imageLoad`        | image 加载后触发       | `() => void`              |
 | `rendered`         | 渲染后触发             | `() => void`              |
 | `renderError`      | 渲染失败后触发         | `() => void`              |
 | `renderImage`      | 插入图片渲染后触发     | `() => void`              |
 | `renderImageError` | 插入图片渲染失败后触发 | `() => void`              |
 
-### defineExpose
+### Exposes
 
 | 名称           | 详情           | 类型                             |
 | -------------- | -------------- | -------------------------------- |

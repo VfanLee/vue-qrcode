@@ -9,16 +9,16 @@
   <body>
     <div id="app"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue@3.3.4/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
     <script src="./node_modules/vue-qrcode/dist/vue-qrcode.umd.js"></script>
     <script>
       const { createApp } = Vue
 
       const App = {
         template: `
-          <div>
-            <VueQrcode v-model="value" image="/vite.svg" />
-          </div>
+        <div>
+          <VueQrcode v-model="value" image="/vite.svg" />
+        </div>
         `,
         data() {
           return {
@@ -28,7 +28,6 @@
       }
 
       const app = createApp(App)
-      console.log(VueQrcode)
       app.use(VueQrcode)
       app.mount('#app')
     </script>

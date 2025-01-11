@@ -18,14 +18,12 @@ const id = uuid('vue-qrcode')
 const renderQRCode = () => {
   const canvas = VueQrcodeRef.value
   if (!canvas) return
-  QRCode.toCanvas(
-    canvas,
-    props.modelValue,
-    {
-      ...props.options,
-    },
-    renderQRCodeCallback,
-  )
+
+  const value = props.modelValue
+  const options = {
+    ...props.options,
+  }
+  QRCode.toCanvas(canvas, value, options, renderQRCodeCallback)
 }
 
 async function renderQRCodeCallback(error: Error | null | undefined) {

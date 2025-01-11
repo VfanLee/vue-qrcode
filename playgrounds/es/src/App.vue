@@ -10,19 +10,15 @@ const handleClick = () => {
   const canvas = qrcodeRef.value.VueQrcodeRef
   console.log(canvas)
 }
-
 const handleChange = value => {
   console.log('change', value)
 }
-
 const handleRendered = () => {
   console.log('rendered')
 }
-
 const handlerenderError = error => {
   console.log('renderError', error)
 }
-
 const hRndlerenderImage = () => {
   console.log('renderImage')
 }
