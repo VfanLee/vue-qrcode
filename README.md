@@ -17,7 +17,7 @@ npm install @vfanlee/vue-qrcode
 ```js
 import { createApp } from 'vue'
 import App from './App.vue'
-import VueQrcode from 'vue-qrcode'
+import VueQrcode from '@vfanlee/vue-qrcode'
 
 const app = createApp(App)
 
@@ -31,7 +31,7 @@ app.mount('#app')
 ```vue
 <script setup>
 import { ref } from 'vue'
-import { VueQrcode } from 'vue-qrcode'
+import { VueQrcode } from '@vfanlee/vue-qrcode'
 
 const value = ref('https://github.com/vfanlee/vue-qrcode')
 </script>
@@ -47,11 +47,11 @@ const value = ref('https://github.com/vfanlee/vue-qrcode')
 
 ### Attributes
 
-| 属性名                   | 说明                                                                              | 类型     |
-| ------------------------ | --------------------------------------------------------------------------------- | -------- |
-| `modelValue` / `v-model` | 文本值                                                                            | `string` |
-| `image`                  | 图片路径                                                                          | `string` |
-| `options`                | 配置选项，可参考 [qrcode](https://github.com/soldair/node-qrcode#qr-code-options) | `object` |
+| 属性名                   | 说明                                                                                   | 类型     |
+| ------------------------ | -------------------------------------------------------------------------------------- | -------- |
+| `modelValue` / `v-model` | 文本值                                                                                 | `string` |
+| `image`                  | 图片路径                                                                               | `string` |
+| `options`                | 配置选项，可参考 [qrcode](https://github.com/soldair/node-qrcode#qr-code-options) 配置 | `object` |
 
 ### Events
 

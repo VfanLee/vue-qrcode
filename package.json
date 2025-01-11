@@ -1,6 +1,24 @@
 {
   "name": "@vfanlee/vue-qrcode",
   "version": "0.0.1",
+  "description": "一个基于 qrcode 的 Vue3 组件",
+  "keywords": [
+    "vue",
+    "vue3",
+    "qrcode",
+    "vue-component"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/VfanLee/vue-qrcode.git",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/VfanLee/vue-qrcode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/VfanLee/vue-qrcode/issues"
+  },
   "type": "module",
   "module": "dist/vue-qrcode.js",
   "main": "dist/vue-qrcode.umd.js",
@@ -14,6 +32,12 @@
       "require": "./dist/vue-qrcode.umd.js"
     }
   },
+  "author": {
+    "name": "Vfan Lee",
+    "email": "fanfanfafafa@gmail.com",
+    "url": "https://github.com/VfanLee"
+  },
+  "license": "MIT",
   "scripts": {
     "build": "run-p type-check \"build-only {@}\" --",
     "build-only": "vite build",

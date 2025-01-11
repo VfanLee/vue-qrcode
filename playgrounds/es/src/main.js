@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import VueQrcode from 'vue-qrcode'
+import VueQrcode from '@vfanlee/vue-qrcode'
 
 const app = createApp(App)
 app.use(VueQrcode)
