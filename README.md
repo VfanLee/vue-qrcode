@@ -1,5 +1,7 @@
 # Vue Qrcode
 
+[![vue-qrcode](https://img.shields.io/npm/v/@vfanlee/vue-qrcode.svg)](https://www.npmjs.com/package/@vfanlee/vue-qrcode) ![](https://img.shields.io/npm/dm/@vfanlee/vue-qrcode.svg)
+
 ## 介绍
 
 一个基于 [qrcode](https://www.npmjs.com/package/qrcode) 的 Vue3 组件。
