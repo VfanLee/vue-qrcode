@@ -30,13 +30,13 @@ jobs:
       - name: Build project
         run: pnpm build
 
-      - name: Create github release
+      - name: Create gitHub release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag: ${{ github.ref_name }}
-          name: Release ${{ github.ref_name }}
+          tag_name: ${{ github.ref_name }}
+          release_name: Release ${{ github.ref_name }}
           body: |
             For stable releases, please refer to [CHANGELOG.md](https://github.com/VfanLee/vue-qrcode/blob/main/CHANGELOG.md) for details.
           draft: false
