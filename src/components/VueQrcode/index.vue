@@ -35,7 +35,7 @@ async function renderQRCodeCallback(error: Error | null | undefined) {
   if (props.image) {
     try {
       await renderImage()
-    } catch (error) {
+    } catch {
       emit('renderImageError')
     }
   }
@@ -61,7 +61,7 @@ function renderImage(): Promise<void> {
           resolve()
         }
       }
-      image.onerror = error => {
+      image.onerror = (error) => {
         reject(error)
       }
     }
@@ -70,7 +70,7 @@ function renderImage(): Promise<void> {
 
 watch(
   () => props.modelValue,
-  newVal => {
+  (newVal) => {
     emit('change', props.modelValue)
     if (newVal) {
       nextTick(() => {
