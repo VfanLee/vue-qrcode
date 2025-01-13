@@ -1,6 +1,6 @@
 {
   "name": "@vfanlee/vue-qrcode",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "一个基于 qrcode 的 Vue3 组件",
   "keywords": [
     "vue",
@@ -43,7 +43,6 @@
     "build": "run-p type-check \"build-only {@}\" --",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
-    "prepublishOnly": "pnpm run build",
     "lint": "eslint . --fix",
     "format": "prettier --write src/",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
