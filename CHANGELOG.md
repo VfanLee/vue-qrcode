@@ -1,4 +1,9 @@
-## [0.0.3](https://github.com/VfanLee/vue-qrcode/compare/v0.0.2...v0.0.3) (2025-01-13)
+## 0.0.2 (2025-01-13)
+
+Publish configuration
 
 
+## 0.0.1 (2025-01-12)
+
+Initial release
 
