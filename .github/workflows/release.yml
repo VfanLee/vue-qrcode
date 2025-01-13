@@ -46,6 +46,6 @@ jobs:
           prerelease: false
 
       - name: Publish to npm
-        run: pnpm publish
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
