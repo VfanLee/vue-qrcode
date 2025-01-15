@@ -1,6 +1,6 @@
 {
   "name": "@vfanlee/vue-qrcode",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "一个基于 qrcode 的 Vue3 组件",
   "keywords": [
     "vue",

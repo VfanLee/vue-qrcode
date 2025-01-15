@@ -34,16 +34,12 @@ jobs:
         run: pnpm build
 
       - name: Create GitHub Release
-        uses: actions/create-release@v1
+        run: |
+          gh release create ${{ github.ref_name }} \
+            --title "Release ${{ github.ref_name }}" \
+            --notes "For stable releases, please refer to [CHANGELOG.md](https://github.com/VfanLee/vue-qrcode/blob/main/CHANGELOG.md) for details."
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref_name }}
-          release_name: Release ${{ github.ref_name }}
-          body: |
-            For stable releases, please refer to [CHANGELOG.md](https://github.com/VfanLee/vue-qrcode/blob/main/CHANGELOG.md) for details.
-          draft: false
-          prerelease: false
 
       - name: Publish to npm
         run: npm publish
