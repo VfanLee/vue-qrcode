@@ -1,6 +1,6 @@
 {
   "name": "es",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,8 +8,11 @@
     "build": "vite build",
     "preview": "vite preview"
   },
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
-    "@vfanlee/vue-qrcode": "^0.0.1-beta.1",
+    "@vfanlee/vue-qrcode": "latest",
     "vue": "^3.5.13"
   },
   "devDependencies": {

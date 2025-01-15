@@ -1,14 +1,15 @@
 {
   "name": "@vfanlee/vue-qrcode",
-  "version": "0.0.6",
-  "description": "一个基于 qrcode 的 Vue3 组件",
+  "version": "0.0.7",
+  "description": "A Vue 3 component based on qrcode",
   "keywords": [
     "vue",
     "vue3",
+    "typescript",
     "qrcode",
     "vue-component"
   ],
-  "packageManager": "pnpm@9.15.3",
+  "packageManager": "pnpm@9.15.4",
   "publishConfig": {
     "access": "public"
   },

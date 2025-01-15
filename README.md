@@ -1,20 +1,35 @@
 # Vue Qrcode
 
-[![vue-qrcode](https://img.shields.io/npm/v/@vfanlee/vue-qrcode.svg)](https://www.npmjs.com/package/@vfanlee/vue-qrcode) ![](https://img.shields.io/npm/dm/@vfanlee/vue-qrcode.svg)
+[![vue-qrcode](https://img.shields.io/npm/v/@vfanlee/vue-qrcode.svg)](https://www.npmjs.com/package/@vfanlee/vue-qrcode)
+[![build status](https://github.com/VfanLee/vue-qrcode/actions/workflows/release.yml/badge.svg)](https://github.com/VfanLee/vue-qrcode/actions/workflows/release.yml)
+![download](https://img.shields.io/npm/dm/@vfanlee/vue-qrcode.svg)
+![license](https://img.shields.io/github/license/VfanLee/vue-qrcode)
 
-## 介绍
+## Introduction
 
-一个基于 [qrcode](https://www.npmjs.com/package/qrcode) 的 Vue3 组件。
+A Vue 3 component based on [qrcode](https://www.npmjs.com/package/qrcode).
 
-## 安装
+## Install
+
+### Using Package Manager
 
 ```bash
 npm install @vfanlee/vue-qrcode
 ```
 
-## 用法
+### Import in Browser
 
-### 通过插件全局注册
+```html
+<!-- jsdelivr -->
+<script src="https://cdn.jsdelivr.net/npm/@vfanlee/vue-qrcode@latest/dist/vue-qrcode.umd.js"></script>
+
+<!-- unpkg -->
+<script src="https://unpkg.com/@vfanlee/vue-qrcode@latest/dist/vue-qrcode.umd.js"></script>
+```
+
+## Usage
+
+### Register Globally via Plugin
 
 ```js
 import { createApp } from 'vue'
@@ -28,7 +43,7 @@ app.use(VueQrcode)
 app.mount('#app')
 ```
 
-### 按需引入
+### Import on Demand
 
 ```vue
 <script setup>
@@ -49,24 +64,32 @@ const value = ref('https://github.com/vfanlee/vue-qrcode')
 
 ### Attributes
 
-| 属性名                   | 说明                                                                                   | 类型     |
-| ------------------------ | -------------------------------------------------------------------------------------- | -------- |
-| `modelValue` / `v-model` | 文本值                                                                                 | `string` |
-| `image`                  | 图片路径                                                                               | `string` |
-| `options`                | 配置选项，可参考 [qrcode](https://github.com/soldair/node-qrcode#qr-code-options) 配置 | `object` |
+| Name                     | Description                                                                                      | Type     |
+| ------------------------ | ------------------------------------------------------------------------------------------------ | -------- |
+| `modelValue` / `v-model` | Text value                                                                                       | `string` |
+| `image`                  | Image path                                                                                       | `string` |
+| `options`                | Configuration options, refer to [qrcode](https://github.com/soldair/node-qrcode#qr-code-options) | `object` |
 
 ### Events
 
-| 事件名             | 详情                   | 类型                      |
-| ------------------ | ---------------------- | ------------------------- |
-| `change`           | 文本值改变后触发       | `(value: string) => void` |
-| `rendered`         | 渲染后触发             | `() => void`              |
-| `renderError`      | 渲染失败后触发         | `() => void`              |
-| `renderImage`      | 插入图片渲染后触发     | `() => void`              |
-| `renderImageError` | 插入图片渲染失败后触发 | `() => void`              |
+| Event Name         | Description                                         | Type                      |
+| ------------------ | --------------------------------------------------- | ------------------------- |
+| `change`           | Triggered when the text value changes               | `(value: string) => void` |
+| `rendered`         | Triggered after rendering                           | `() => void`              |
+| `renderError`      | Triggered when rendering fails                      | `() => void`              |
+| `renderImage`      | Triggered after inserting an image and rendering it | `() => void`              |
+| `renderImageError` | Triggered when image insertion or rendering fails   | `() => void`              |
 
 ### Exposes
 
-| 名称           | 详情           | 类型                             |
-| -------------- | -------------- | -------------------------------- |
-| `VueQrcodeRef` | VueQrcode 实例 | `Ref<HTMLCanvasElement \| null>` |
+| Name           | Description        | Type                             |
+| -------------- | ------------------ | -------------------------------- |
+| `VueQrcodeRef` | VueQrcode instance | `Ref<HTMLCanvasElement \| null>` |
+
+## Contributors
+
+Thanks to all the contributors!
+
+<a href="https://github.com/VfanLee/vue-qrcode/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=VfanLee/vue-qrcode" />
+</a>

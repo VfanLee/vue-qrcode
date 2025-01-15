@@ -11,7 +11,7 @@ const iifeGlobals = {
   vue: 'Vue',
 }
 
-// https://vite.dev/config/
+// https://cn.vite.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
@@ -29,6 +29,7 @@ export default defineConfig({
     lib: {
       entry: ['src/index.ts'],
     },
+    // https://cn.rollupjs.org/configuration-options/
     rollupOptions: {
       external: ['vue'],
       output: [
