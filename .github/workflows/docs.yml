@@ -1,4 +1,4 @@
-name: release
+name: docs
 
 on:
   push:
@@ -6,12 +6,11 @@ on:
       - 'v*'
 
 jobs:
-  release:
-    name: Release
+  docs:
+    name: Docs
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      id-token: write
 
     steps:
       - name: Checkout
@@ -31,16 +30,13 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: pnpm run build
-
-      - name: Publish to npm
         run: |
-          pnpm run publish ${{ github.ref_name }}
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          pnpm run docs:build
 
-      - name: Create GitHub Release
-        run: |
-          pnpm run release ${{ github.ref_name }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: docs/.vitepress/dist
+          clean: true
+          token: ${{ secrets.GITHUB_TOKEN }}
