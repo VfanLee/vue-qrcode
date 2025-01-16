@@ -1,0 +1,1 @@
+import{d as e,a1 as t,c as o,o as a}from"./chunks/framework.DTHQHlQM.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"index.md","filePath":"index.md"}'),r={name:"index.md"},m=e({...r,setup(n){return t().go("/introduction"),(c,d)=>(a(),o("div"))}});export{_ as __pageData,m as default};
