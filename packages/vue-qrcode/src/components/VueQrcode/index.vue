@@ -92,5 +92,7 @@ defineExpose({
 </script>
 
 <template>
-  <canvas class="vue-qrcode" ref="VueQrcodeRef" :id="id"></canvas>
+  <div>
+    <canvas class="vue-qrcode" ref="VueQrcodeRef" :id="id"></canvas>
+  </div>
 </template>

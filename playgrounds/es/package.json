@@ -8,11 +8,8 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "engines": {
-    "node": ">=18"
-  },
   "dependencies": {
-    "@vfanlee/vue-qrcode": "latest",
+    "@vfanlee/vue-qrcode": "workspace:*",
     "vue": "^3.5.13"
   },
   "devDependencies": {

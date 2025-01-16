@@ -1,0 +1,76 @@
+{
+  "name": "@vfanlee/vue-qrcode",
+  "version": "0.1.0-alpha.1",
+  "description": "A Vue 3 component based on qrcode",
+  "keywords": [
+    "vue",
+    "vue3",
+    "typescript",
+    "qrcode",
+    "vue-component"
+  ],
+  "packageManager": "pnpm@9.15.4",
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/VfanLee/vue-qrcode.git",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/VfanLee/vue-qrcode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/VfanLee/vue-qrcode/issues"
+  },
+  "license": "MIT",
+  "main": "dist/vue-qrcode.umd.js",
+  "module": "dist/vue-qrcode.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-qrcode.js",
+      "require": "./dist/vue-qrcode.umd.js"
+    }
+  },
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "author": {
+    "name": "Vfan Lee",
+    "email": "fanfanfafafa@gmail.com",
+    "url": "https://github.com/VfanLee"
+  },
+  "scripts": {
+    "dev:es": "pnpm -C playgrounds/es dev",
+    "dev:umd": "pnpm -C playgrounds/umd dev",
+    "prebuild": "run-p format lint type-check",
+    "build": "vite build",
+    "type-check": "vue-tsc --build",
+    "lint": "eslint . --fix",
+    "format": "prettier --write src/"
+  },
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.0",
+    "@types/node": "^22.10.2",
+    "@types/qrcode": "^1.5.5",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vitejs/plugin-vue-jsx": "^4.1.1",
+    "@vue/eslint-config-prettier": "^10.1.0",
+    "@vue/eslint-config-typescript": "^14.2.0",
+    "@vue/tsconfig": "^0.7.0",
+    "eslint": "^9.18.0",
+    "eslint-plugin-vue": "^9.32.0",
+    "npm-run-all2": "^7.0.2",
+    "prettier": "^3.4.2",
+    "typescript": "~5.6.3",
+    "vite": "^6.0.5",
+    "vite-plugin-dts": "^4.4.0",
+    "vue-tsc": "^2.1.10"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  }
+}
