@@ -35,14 +35,12 @@ jobs:
 
       - name: Publish to npm
         run: |
-          chmod +x ./publish_npm.sh
-          ./publish_npm.sh ${{ github.ref_name }}
+          pnpm publish ${{ github.ref_name }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Create GitHub Release
         run: |
-          chmod +x ./create_github_release.sh
-          ./create_github_release.sh ${{ github.ref_name }}
+          pnpm release ${{ github.ref_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

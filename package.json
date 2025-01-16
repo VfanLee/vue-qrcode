@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "node scripts/dev.js",
     "build": "pnpm -C packages/vue-qrcode build",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "publish": "node scripts/publish.js",
+    "release": "node scripts/release.js"
   },
   "devDependencies": {
     "conventional-changelog-cli": "^5.0.0"
