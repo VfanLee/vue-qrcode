@@ -1,5 +1,4 @@
 {
-  "name": "@vfanlee/vue-qrcode-docs",
   "private": true,
   "scripts": {
     "dev": "vitepress dev",

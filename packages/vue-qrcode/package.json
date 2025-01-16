@@ -1,6 +1,6 @@
 {
   "name": "@vfanlee/vue-qrcode",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "description": "A Vue 3 component based on qrcode",
   "keywords": [
     "vue",
