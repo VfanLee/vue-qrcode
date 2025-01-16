@@ -3,5 +3,5 @@
 
   const router = useRouter()
 
-  router.go('/introduction')
+  router.go('/vue-qrcode/introduction')
 </script>
