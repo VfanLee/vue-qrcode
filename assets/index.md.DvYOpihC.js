@@ -1,0 +1,1 @@
+import{d as e,a1 as t,c as o,o as r}from"./chunks/framework.XovhlvCm.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"index.md","filePath":"index.md"}'),a={name:"index.md"},u=e({...a,setup(n){return t().go("/vue-qrcode/introduction"),(c,d)=>(r(),o("div"))}});export{_ as __pageData,u as default};
