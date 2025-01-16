@@ -4,9 +4,21 @@
 
 ### Using Package Manager
 
-```bash
+::: code-group
+
+```bash [npm]
 npm install @vfanlee/vue-qrcode
 ```
+
+```bash [pnpm]
+pnpm add @vfanlee/vue-qrcode
+```
+
+```bash [yarn]
+yarn add @vfanlee/vue-qrcode
+```
+
+:::
 
 ### Import in Browser
 
