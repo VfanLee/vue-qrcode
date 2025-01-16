@@ -37,3 +37,4 @@ jobs:
           branch: gh-pages
           folder: docs/.vitepress/dist
           clean: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
