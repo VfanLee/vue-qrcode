@@ -13,7 +13,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://github.com/VfanLee/vue-qrcode.git",
+  "homepage": "https://vfanlee.github.io/vue-qrcode",
   "repository": {
     "type": "github",
     "url": "https://github.com/VfanLee/vue-qrcode.git"
